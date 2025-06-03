@@ -1,0 +1,18 @@
+
+
+
+
+
+
+<div class="card mt-5">
+  <h5 class="card-header">Sube una imagen para validar el ticket</h5>
+  <div class="card-body">
+    <input type="file" accept="image/*" (change)="onFileChange($event)" />
+
+    <div *ngIf="imagePreview" class="pt-3">
+      <img [src]="imagePreview" alt="Preview" width="400" />
+      <p class="alert alert-light mt-3">{{ result }}</p>
+    </div>
+
+  </div>
+</div>

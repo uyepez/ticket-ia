@@ -1,0 +1,21 @@
+<div class="card mt-5">
+  <h5 class="card-header">Sube una imagen para validar el texto del ticket</h5>
+  <div class="card-body">
+    <input type="file" (change)="handleFile($event)" accept="image/*"  />
+
+    <div *ngIf="extractedText" class="pt-3">
+      <div *ngIf="previewUrl">
+        <h3>Imagen del ticket:</h3>
+        <img [src]="previewUrl" alt="Preview" width="200" />
+      </div>
+      <h3>Texto Extraído:</h3>
+      <pre>{{ extractedText }}</pre>
+
+      <h3>Datos Detectados</h3>
+      <p><strong>Total:</strong> {{ total }}</p>
+      <p><strong>Fecha:</strong> {{ date }}</p>
+      <p><strong>Folio:</strong> {{ folio }}</p>
+    </div>
+
+  </div>
+</div>
