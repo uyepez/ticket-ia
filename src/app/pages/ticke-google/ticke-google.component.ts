@@ -16,8 +16,8 @@ export class TickeGoogleComponent {
   loading = false;
 
   private endpoint =
-    'https://us-documentai.googleapis.com/v1/projects/775823749947/locations/us/processors/22535e684263dce8:process';
-  private apiKey = 'AIzaSyB_3g3VUEUd0a06WfellnK6FDS-oDOKUu4'; // reemplaza por tu clave API
+    'https://us-documentai.googleapis.com/v1/projects/';
+  private apiKey = 'MI-KEY'; // reemplaza por tu clave API
 
   constructor(private http: HttpClient) {}
 
