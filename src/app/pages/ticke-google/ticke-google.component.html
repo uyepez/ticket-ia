@@ -1,0 +1,17 @@
+<div class="p-4">
+  <h2>Subir Ticket</h2>
+
+  <input type="file" (change)="onFileChange($event)" accept="image/*" />
+  <button (click)="enviarImagen()" [disabled]="loading || !ticketImageBase64">
+    Procesar Ticket
+  </button>
+
+  <div *ngIf="loading">Procesando imagen...</div>
+
+  <div *ngIf="result">
+    <h3>Resultado</h3>
+    <p><strong>Total:</strong> {{ getField('total_amount') }}</p>
+    <p><strong>Fecha:</strong> {{ getField('invoice_date') }}</p>
+    <p><strong>Folio:</strong> {{ getField('invoice_id') }}</p>
+  </div>
+</div>

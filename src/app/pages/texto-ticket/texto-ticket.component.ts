@@ -32,7 +32,7 @@ export class TextoTicketComponent {
   }
 
   extractData(text: string) {
-    const totalMatch = text.match(/(?:Total|TOTAL|TOTAL M.N.|Importe)[^\d]*(\d+[.,]?\d{2})/);
+    const totalMatch = text.match(/(?:Total|TOTAL|TOTAL M.N.|Importe|IMPORTE)[^\d]*(\d+[.,]?\d{2})/);
     this.total = totalMatch ? totalMatch[1] : 'No detectado';
 
     const dateMatch = text.match(/\b(\d{2}\/\d{2}\/\d{4}|\d{4}-\d{2}-\d{2})\b/);
