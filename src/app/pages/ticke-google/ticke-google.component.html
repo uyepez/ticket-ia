@@ -1,17 +1,29 @@
-<div class="p-4">
-  <h2>Subir Ticket</h2>
 
-  <input type="file" (change)="onFileChange($event)" accept="image/*" />
-  <button (click)="enviarImagen()" [disabled]="loading || !ticketImageBase64">
-    Procesar Ticket
-  </button>
 
-  <div *ngIf="loading">Procesando imagen...</div>
 
-  <div *ngIf="result">
-    <h3>Resultado</h3>
-    <p><strong>Total:</strong> {{ getField('total_amount') }}</p>
-    <p><strong>Fecha:</strong> {{ getField('invoice_date') }}</p>
-    <p><strong>Folio:</strong> {{ getField('invoice_id') }}</p>
+<div class="card mt-5">
+  <h5 class="card-header">Sube una imagen para validar el texto del ticket(google)</h5>
+  <div class="card-body">
+    <input type="file" (change)="onFileChange($event)" accept="image/*" />
+    <button (click)="enviarImagen()" [disabled]="loading || !ticketImageBase64">
+      {{ loading ? 'Procesando...' : 'Enviar imagen' }}
+      </button>
+
+    <div *ngIf="result" class="pt-3">
+
+      <div *ngIf="ticketImagePreview" style="margin: 10px 0;">
+        <h4>Vista previa del ticket</h4>
+        <img [src]="ticketImagePreview" alt="Vista previa del ticket"
+          style=" height: 200px; border: 1px solid #ccc; padding: 5px;" /></div>
+
+
+
+      <h3>Datos del Ticket</h3>
+      <p><strong>Total:</strong> {{ getField('total_amount') }}</p>
+      <p><strong>Folio:</strong> {{ getField('purchase_order') }}</p>
+      <p><strong>Fecha:</strong> {{ getField('invoice_date') }}</p>
+    </div>
+
   </div>
 </div>
+
